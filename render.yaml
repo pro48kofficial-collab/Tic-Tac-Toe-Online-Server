@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: tic-tac-toe-online
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tic-tac-toe-db
+          property: connectionString
+
+databases:
+  - name: tic-tac-toe-db
+    plan: free
+    databaseName: tic_tac_toe
+    user: tic_user
