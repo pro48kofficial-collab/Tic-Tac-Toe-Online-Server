@@ -1,4 +1,4 @@
-$('leaders').innerHTML=top.length?top.map(function(p){var av=p.avatar?'<div class="leader-avatar"><img src="'+String(p.avatar).replace(/"/g,'&quot;')+'" alt=""></div>':'<div class="leader-avatar">🙂</div>';return '<div class="leader"><div class="place">#'+p.position+'</div>'+av+'<div class="leader-main"><b>'+String(p.nickname||'Гравець').replace(/[&<>]/g,'')+'</b><small>'+String(p.rank||'')+'</small></div><div class="wins">'+(p.wins||0)+' 🏆</div></div>';}).join(''):'<div class="card empty"><b>Поки що ніхто не зіграв</b></div>';const express = require('express');
+const express = require('express');
 const http = require('http');
 const { WebSocketServer } = require('ws');
 const { Pool } = require('pg');
